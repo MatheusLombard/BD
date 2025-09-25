@@ -1,5 +1,4 @@
-const rotaUsuarios = require('./usuariosRotes')
+const rotaUsuarios = require("./usuariosRotes");
 module.exports = (app) => {
-    app.use(rotaUsuarios)
-    app.use(express.json());
-}
+  app.use(rotaUsuarios);
+};
