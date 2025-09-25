@@ -14,7 +14,7 @@ class Tabelas {
                     Nome VARCHAR(50) NOT NULL,  
                     Telefone VARCHAR(14) NOT NULL,  
                     CPF INT NOT NULL,
-                    EMAIL VARCHAR(40), 
+                    Email VARCHAR(40),    
                     CEP VARCHAR(9) NOT NULL,  
                     Logradouro VARCHAR(100) NOT NULL,  
                     Cidade VARCHAR(40) NOT NULL,  
