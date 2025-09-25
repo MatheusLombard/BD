@@ -7,6 +7,7 @@ tabelas.init(con)
 //EXPRESS
 const express = require('express')
 const app = express()
+app.use(express.json());
 const porta = process.env.PORTA
 
 const router = require('./rotas/index')
