@@ -1,7 +1,8 @@
 const conexao = require('../conexao');
 class UsuariosModels {
-    listar() {
-        let sql = `SELECT Usuario_ID FROM usuarios WHERE usuarios.CPF = 1111111111 AND usuarios.Senha = '123321'
+    logar(usuario) {
+        
+        let sql = `SELECT Usuario_ID FROM usuarios WHERE ${usuario.email} =  AND usuarios.Senha = ${usuario.senha}
                     `
         return new Promise((resolve, reject) => {
             conexao.query(sql, {}, (error, result) => {
