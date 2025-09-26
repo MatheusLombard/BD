@@ -16,10 +16,14 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/cadastro', (req, res) => {
+  if(!req.body.nome || !req.body.telefone || !req.body.cpf || !req.body.email || !req.body.cep || !req.body.logradouro || !req.body.cidade || !req.body.bairro || !req.body.uf || !req.body.numero || !req.body.senha){
+    return res.status(400).json('Todos os campos são obrigatórios')
+  }
   let usuario = {
     nome: req.body.nome,
     telefone: req.body.telefone,
     cpf: req.body.cpf,
+    email: req.body.email,
     cep: req.body.cep,
     logradouro: req.body.logradouro,
     cidade: req.body.cidade,

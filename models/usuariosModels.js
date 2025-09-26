@@ -1,13 +1,17 @@
 const conexao = require("../conexao");
 class UsuariosModels {
   logar(usuario) {
-    let sql = `SELECT Usuario_ID FROM usuarios WHERE usuarios.Email = '${usuario.email}' AND usuarios.Senha = '${usuario.senha}'
+    let sql = `SELECT * FROM usuarios WHERE usuarios.Email = '${usuario.email}' AND usuarios.Senha = '${usuario.senha}'
     `;
-
+    
     return new Promise((resolve, reject) => {
       conexao.query(sql, {}, (error, result) => {
         if (error) {
           reject(error);
+        }
+        console.log(result.length);
+        if(result.length === 0){
+          resolve('Usuário ou senha inválidos');
         }
         resolve(result);
       });
