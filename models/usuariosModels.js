@@ -15,7 +15,7 @@ class UsuariosModels {
   }
 
   cadastrar(usuario){
-    let sql = `INSERT INTO Usuarios (Nome,Telefone,CPF,Email,CEP,Logradouro,Cidade,Bairro,UF,Numero_Casa,Senha) VALUES (${usuario.nome},${usuario.telefone},${usuario.cpf},${usuario.email},${usuario.cep},${usuario.logradouro},${usuario.cidade},${usuario.bairro},${usuario.uf},${usuario.numero},${usuario.senha});`
+    let sql = `INSERT INTO Usuarios (Nome,Telefone,CPF,Email,CEP,Logradouro,Cidade,Bairro,UF,Numero_Casa,Senha) VALUES ('${usuario.nome}','${usuario.telefone}','${usuario.cpf}','${usuario.email}','${usuario.cep}','${usuario.logradouro}','${usuario.cidade}','${usuario.bairro}','${usuario.uf}','${usuario.numero}','${usuario.senha}');`
 
       return new Promise((resolve, reject) => {
         conexao.query(sql, {}, (error, result) => {
