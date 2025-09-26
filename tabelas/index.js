@@ -9,21 +9,21 @@ class Tabelas {
   }
 
   criarUsuarios() {
-    let sql = `CREATE TABLE IF NOT EXISTS Usuarios ( 
-                    Usuario_ID INT PRIMARY KEY AUTO_INCREMENT,  
-                    Nome VARCHAR(50) NOT NULL,  
-                    Telefone VARCHAR(14) NOT NULL,  
-                    CPF INT NOT NULL,
-                    Email VARCHAR(40),    
-                    CEP VARCHAR(9) NOT NULL,  
-                    Logradouro VARCHAR(100) NOT NULL,  
-                    Cidade VARCHAR(40) NOT NULL,  
-                    Bairro VARCHAR(30) NOT NULL,  
-                    UF VARCHAR(2) NOT NULL,
-                    Numero_Casa INT,
-                    Senha VARCHAR(20),
-                    UNIQUE (Telefone,CPF)
-                );`;
+    let sql = ` CREATE TABLE IF NOT EXISTS Usuarios ( 
+        Usuario_ID INT PRIMARY KEY AUTO_INCREMENT,  
+        Nome VARCHAR(50) NOT NULL,  
+        Telefone VARCHAR(14) NOT NULL,  
+        CPF INT NOT NULL,
+        Email VARCHAR(40) NOT NULL,    
+        CEP VARCHAR(9) NOT NULL,  
+        Logradouro VARCHAR(100) NOT NULL,  
+        Cidade VARCHAR(40) NOT NULL,  
+        Bairro VARCHAR(30) NOT NULL,  
+        UF VARCHAR(2) NOT NULL,
+        Numero_Casa INT NOT NULL,
+        Senha VARCHAR(20) NOT NULL,
+        UNIQUE (Telefone,CPF)
+    );`;
     this.con.query(sql, (erro, resultado) => {
       if (erro) throw console.log(`Deu erro, mesagem: ${erro}`);
       return console.log(`Tabela USUARIO criada`);
