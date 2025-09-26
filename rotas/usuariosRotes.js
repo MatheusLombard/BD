@@ -8,6 +8,7 @@ router.post('/login', (req, res) => {
     email: req.body.email,
     senha: req.body.senha
   }
+  console.log('teste: ', usuario.email)
   const resLogin = controller.logarUsuarios(usuario);
   resLogin
     .then((usuarios) => res.status(200).json(usuarios))
