@@ -13,7 +13,7 @@ class Tabelas {
         Usuario_ID INT PRIMARY KEY AUTO_INCREMENT,  
         Nome VARCHAR(50) NOT NULL,  
         Telefone VARCHAR(14) NOT NULL,  
-        CPF INT NOT NULL,
+        CPF VARCHAR(14) NOT NULL,
         Email VARCHAR(40) NOT NULL,    
         CEP VARCHAR(9) NOT NULL,  
         Logradouro VARCHAR(100) NOT NULL,  
