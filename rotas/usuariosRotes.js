@@ -28,7 +28,7 @@ router.post('/cadastro', (req, res) => {
     senha: req.body.senha,
   } 
 
-  const respCadastro = controller.cadastraUsuarios();
+  const respCadastro = controller.cadastraUsuarios(usuario);
   respCadastro
   .then((usuario) => res.status(200).json(usuario))
   .catch((error) => res.status(500).json(error.message))
